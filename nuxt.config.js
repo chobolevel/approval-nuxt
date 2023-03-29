@@ -47,8 +47,9 @@ export default {
   },
 
   proxy: {
-    '/ms': {
-      target: 'https://login.microsoftonline.com/common/oauth2/v2.0'
+    '/ms/login': {
+      target: 'https://login.microsoftonline.com/common/oauth2/v2.0',
+      pathRewrite: { '^/ms/login': '' }
     }
   }
 }

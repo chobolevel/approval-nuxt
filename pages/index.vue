@@ -8,8 +8,8 @@
 export default {
   methods: {
     handleClick() {
+      window.location.href='https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=aa37dd07-47bc-4942-a172-7a50666bb9e6&response_type=code&redirect_uri=http://localhost:3000/auth/token&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=12345'
       // window.location.replace(`${process.env.MS_AUTH_URL}?client_id=${process.env.CLIENT_ID}&response_type=token&scope=user.read`)
-      console.log(this.$route.fullPath)
     }
   }
 }

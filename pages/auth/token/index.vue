@@ -5,12 +5,14 @@
 </template>
 
 <script>
-import jwt_decode from "jwt-decode";
 
 export default {
-  created() {
-    const first = this.$route.hash.split('&')[0].split('=')[1]
+  async asyncData({query, $axios}) {
+    const { code } = query
+    const data = await $axios.post('/login/token', {
 
-  }
+    })
+    console.log(data)
+  },
 }
 </script>
