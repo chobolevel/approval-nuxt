@@ -35,7 +35,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/dotenv',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['cookie-universal-nuxt', { alias: 'cookies' }]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -47,9 +48,13 @@ export default {
   },
 
   proxy: {
-    '/ms/login': {
+    '/ms': {
       target: 'https://login.microsoftonline.com/common/oauth2/v2.0',
-      pathRewrite: { '^/ms/login': '' }
+      pathRewrite: { '^/ms': '' }
+    },
+    '/graph': {
+      target: 'https://graph.microsoft.com/v1.0',
+      pathRewrite: {'^/graph': '' }
     }
   }
 }
